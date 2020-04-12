@@ -8,7 +8,7 @@ function generateMarkdown(user, answers) {
   }
 
 return `
-# ${answers.projectTitle}  ![badge](https://img.shields.io/static/v1?label=${answers.badgeLabel}&color=green)
+# ${answers.projectTitle}  ![badge](https://img.shields.io/static/v1?label=HelloWorld&message=${answers.badgeLabel}&color=green)
 
 ![](${user.avatar_url})
 

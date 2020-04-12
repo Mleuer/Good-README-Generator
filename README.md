@@ -1,30 +1,30 @@
 
-# nnn  ![badge](https://img.shields.io/static/v1?label=nnnnn&color=green)
+# Good README Generator  ![badge](https://img.shields.io/static/v1?label=HelloWorld&message=Matt&color=green)
 
 ![](https://avatars3.githubusercontent.com/u/46830225?v=4)
 
 mattleuer@gmail.com
 
 ## Description 
-nnnnn
+A command-line application that dynamically generates a README.md from a user's input.
 
 ## Table of Contents
-Installation 
-Usage 
-License 
-Contributing 
-Tests 
-Questions 
+[Installation] (#Installation) 
+[Usage] (#Usage) 
+[License] (#License) 
+[Contributing] (#Contributing) 
+[Tests] (#Tests) 
+[Questions] (#Questions) 
 
 
 ## Installation
-nnn
+run npm install
 
 ## Usage
-nnnn
+For easily creating a Good README.md file for use in any project.
 
 ## Contributors
-nnn
+N/A
 
 ## License
 ISC License

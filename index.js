@@ -68,7 +68,6 @@ function writeToFile(fileName, data) {
 
 async function init() {
     const answers = await inquirer.prompt(questions);
-    console.log(answers);
     const user = await api.getUser(answers.githubUsername);
     const markDown = generateMarkdown(user, answers);
     writeToFile("README.md", markDown);
