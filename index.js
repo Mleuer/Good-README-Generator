@@ -1,4 +1,12 @@
 const api = require("./utils/api.js");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require('fs');
+require('dotenv').config();
+
+
+
+
 
 
 const questions = [
@@ -11,6 +19,11 @@ const questions = [
         type: "input",
         name: "projectTitle",
         message: "What is the title of your project?"
+    },
+    {
+        type: "input",
+        name: "badgeLabel",
+        message: "What would you like your badge to say?"
     },
     {
         type: "input",
@@ -39,18 +52,26 @@ const questions = [
         message: "Comma separated list of Github profiles of contributors"
     },
     {
-        type: "input",
-        name: "contributors",
-        message: "Comma separated list of Github profiles of contributors"
+        type: "checkbox",
+        name: "tableOfContents",
+        message: "Which of the following would you like included in the Table of Contents?",
+        choices: ["Installation", "Usage", "License", "Contributing", "Tests", "Questions"]
     }
 ];
 
 function writeToFile(fileName, data) {
-    
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
 }
 
-function init() {
-
+async function init() {
+    const answers = await inquirer.prompt(questions);
+    console.log(answers);
+    const user = await api.getUser(answers.githubUsername);
+    const markDown = generateMarkdown(user, answers);
+    writeToFile("README.md", markDown);
 }
 
 init();
